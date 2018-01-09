@@ -19,3 +19,8 @@
 * [node-uuid](https://www.npmjs.com/package/node-uuid)
 * [frisby](https://www.npmjs.com/package/frisby)
 * [node-find-files](https://www.npmjs.com/package/node-find-files)
+
+## Groupe
+
+* Quentin Saint-Paul // quentin.saint-paul@etu.uca.fr 
+* Quentin Rochet // quentin.rochet@etu.uca.fr
