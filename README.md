@@ -19,3 +19,8 @@
 * [node-uuid](https://www.npmjs.com/package/node-uuid)
 * [frisby](https://www.npmjs.com/package/frisby)
 * [node-find-files](https://www.npmjs.com/package/node-find-files)
+
+Louradour Emeric 
+Emeric.LOURADOUR@etu.uca.fr
+Hebert Florian 
+Florian.HEBERT@etu.uca.fr
