@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 // Router List
-const apiEpisodesRouter = require('./api.js');
+const apiEpisodesRouter = require('./controller/api.js');
 
 // Binding Route
 app.use('/api/episodes', apiEpisodesRouter);
