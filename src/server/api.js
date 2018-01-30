@@ -1,7 +1,7 @@
 var express = require('express');
 var routeur = express.Router();
 var bodyParser = require('body-parser');
-var crud = require('./filesFunction');
+var dal = require('./filesFunction');
 
 
 routeur.use(bodyParser.json());
@@ -19,17 +19,30 @@ routeur.post('/episodes', function(req, res) {
   res.send('POST');
 
   let episode = req.body;
-  crud.createJson("./src/data/", episode);
+  dal.createJson("./src/data/", episode);
 
 });
 
 //listage des épisodes
-routeur.get('/episodes', function(req,res){
-  res.send('GET');
-  console.log(crud.findAll());
+/*routeur.get('/episodes', function(req,res){
+  dal.findAll()
+    .then((episodes) => {
+      res.status(200);
+      res.send(episodes);
+    });
+    .catch((err)=>{res.sendStatus(500);});
+});*/
 
+routeur.get('/episode/:id', function(req, res) {
+  dal.findById(req.params.id)
+    .then((episode) => {
+      res.status(200);
+      res.send(episode);
+    })
+  .catch(err => {
+    res.sendStatus(500).end;
+  });
 })
-
 
 
 module.exports = routeur;

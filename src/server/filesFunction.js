@@ -12,14 +12,33 @@ function createJson(location, episode) {
 
 
 //liste des fichiers
-function findAll() {
-  let path = "./src/data/";
+/*function findAll(
+  return new Promise((function (reslove, reject)  {
+    const path = "./src/data/";
+    fs.readdir(path, (err, files) => {
+      files.forEach(file => {
+        console.log(file);
+      });
+    }) {
+      if (err) {
+        reject(err);
+        return;
+      } else {
+        resolve('Sucess');
+        return;
+      }
+    }
+  });
+
+)}*/
+
+/*  const path = "./src/data/";
   fs.readdir(path, (err, files) => {
     files.forEach(file => {
       console.log(file);
     })
   })
-}
+}*/
 /*
 function findById(id) {
   let path = "./src/data/";
@@ -30,7 +49,26 @@ function findById(id) {
 }
 */
 
+function findById(id) {
+  return new Promise(function(resolve, reject) {
+    const path = "./src/data";
+    fs.readFile(path,id+".json", 'utf8', function(err, episode){
+      if(err){
+        reject(err);
+        return;
+      }
+      else{
+        resolve(episode);
+        return;
+      }
+    });
+
+  });
+}
+
+
 
 
 exports.createJson = createJson;
-exports.findAll = findAll;
+//exports.findAll = findAll;
+exports.findById = findById;
