@@ -27,10 +27,10 @@ router.post('/', function (req, res) {
             res.status(201);
             res.send(episode);
         })
-        .catch((err)=>{
-            res.sendStatus(500);
+        .catch((err) => {
+            res.sendStatus(400);
         });
 })
 
 
-module.exports = router
+module.exports = router;
