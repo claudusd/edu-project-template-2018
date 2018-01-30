@@ -1,0 +1,20 @@
+    var data = { id: uuidV4.v4(), name: ep.name, code: ep.code, score: ep.score };
+
+    var stat = fs.statSync(f_path);
+    if (stat.size == 0){
+
+        var j = {};
+        j['episodes'] = []
+        j['episodes'].push(data);
+
+    } else {
+        var j = JSON.parse(fs.readFileSync(f_path));
+        j['episodes'].push(data);
+    }
+
+    fs.writeFile(f_path, JSON.stringify(j), function(err) {
+        if(err) {
+            return console.log(err);
+        }
+        console.log("Fichier sauvegardé !");
+    })

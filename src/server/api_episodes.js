@@ -1,16 +1,35 @@
 var express = require('express')
 var router = express.Router()
 
-// middleware that is specific to this router
+var bodyParser = require('body-parser')
+const dal = require('./dal.js')
+
+var uuidV4 = require('node-uuid')
+
+var f_path = "/home/etud/qurochet/edu-project-template-2018/save-episodes";
+
+
+
+router.use(bodyParser.json())
+
 router.use(function timeLog (req, res, next) {
     console.log('Time: ', Date.now())
     next()
 })
 
+
 router.post('/', function (req, res) {
+    const ep = req.body;
+    ep.id = uuidV4.v4();
 
-    res.json({ id: '1' })
-
+    dal.insert(ep)
+        .then((episode) => {
+            res.status(201);
+            res.send(episode);
+        })
+        .catch((err)=>{
+            res.sendStatus(500);
+        });
 })
 
 
