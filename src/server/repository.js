@@ -1,25 +1,32 @@
 var fs = require('fs');
 
 
-function findall() { }
+function findAll() {}
 
-function findById(id) {}
+function findById(id) {
+
+
+}
 
 function deleteEle() {}
 
 function update() {}
 
-function insert(episode, file) {
+function insert(episode, file, callback) {
     fs.writeFile(file, JSON.stringify(episode) , function(err) {
+        var status = 0;
         if(err) {
-            return console.log(err);
+            status = 500;
+        } else {
+            status = 201;
         }
-        console.log("The file was saved!");
+        callback({episode : episode, status : status});
     });
 }
 
-exports.findall = findall();
-exports.findById = findById();
-exports.deleteEle = deleteEle();
-exports.update = update();
-exports.insert = insert();
+
+exports.findAll = findAll;
+exports.findById = findById;
+exports.deleteEle = deleteEle;
+exports.update = update;
+exports.insert = insert;
