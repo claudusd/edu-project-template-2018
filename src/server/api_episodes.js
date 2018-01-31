@@ -19,6 +19,7 @@ router.use(function timeLog (req, res, next) {
 
 
 router.post('/', function (req, res) {
+
     const ep = req.body;
     ep.id = uuidV4.v4();
 
@@ -30,7 +31,21 @@ router.post('/', function (req, res) {
         .catch((err) => {
             res.sendStatus(400);
         });
+
 })
 
+
+router.get('/all/', function(req, res) {
+
+    dal.findAll()
+        .then((episodes) => {
+            res.status(201);
+            res.send(episodes);
+        })
+        .catch((err) => {
+            res.sendStatus(400);
+        });
+
+});
 
 module.exports = router;
