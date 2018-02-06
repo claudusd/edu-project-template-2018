@@ -19,3 +19,8 @@
 * [node-uuid](https://www.npmjs.com/package/node-uuid)
 * [frisby](https://www.npmjs.com/package/frisby)
 * [node-find-files](https://www.npmjs.com/package/node-find-files)
+
+## User
+
+* Alexandre Caillot (alexandre.caillot@etu.uca.fr)
+* Valentin Rocha (valentin.rocha@etu.uca.fr)
