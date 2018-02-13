@@ -19,3 +19,8 @@
 * [node-uuid](https://www.npmjs.com/package/node-uuid)
 * [frisby](https://www.npmjs.com/package/frisby)
 * [node-find-files](https://www.npmjs.com/package/node-find-files)
+
+## Authors
+
+* BOUSFIRA Djamel <djamel.bousfira@etu.uca.fr>
+* PIAT Hugo <hugo.piat@etu.uca.fr>
